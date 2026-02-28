@@ -1,0 +1,282 @@
+{
+  "title": "Custom build vs. \"Headless\" Open-Source ERP for a B2B SaaS? (+ Pricing & AI prototype questions)",
+  "content": "",
+  "url": "https://www.reddit.com/r/softwarearchitecture/comments/1r8wn64/custom_build_vs_headless_opensource_erp_for_a_b2b/",
+  "author": "Important-Ad6614",
+  "platform": "reddit",
+  "created_at": "2026-02-19T11:19:15.571Z",
+  "engagement": {
+    "comments": 0,
+    "upvotes": 3
+  },
+  "community": {
+    "name": "softwarearchitecture",
+    "members": 95202
+  },
+  "raw": {
+    "post_id": "t3_1r8wn64",
+    "url": "https://www.reddit.com/r/softwarearchitecture/comments/1r8wn64/custom_build_vs_headless_opensource_erp_for_a_b2b/",
+    "user_posted": "Important-Ad6614",
+    "title": "Custom build vs. \"Headless\" Open-Source ERP for a B2B SaaS? (+ Pricing & AI prototype questions)",
+    "description": null,
+    "num_comments": 0,
+    "date_posted": "2026-02-19T11:19:15.571Z",
+    "community_name": "softwarearchitecture",
+    "num_upvotes": 3,
+    "photos": null,
+    "videos": null,
+    "tag": "Discussion/Advice",
+    "related_posts": [
+      {
+        "community": "entrepreneur",
+        "community_url": "https://www.reddit.com/r/Entrepreneur/comments/1qhtr86/why_would_a_company_pay_1500year_for_saas_when_a/",
+        "title": "why would a company pay $1,500/year for SaaS when a dev can build it custom for $500?",
+        "url": "https://www.reddit.com/r/Entrepreneur/comments/1qhtr86/why_would_a_company_pay_1500year_for_saas_when_a/",
+        "thumbnail": null,
+        "num_upvotes": "0",
+        "num_comments": 42
+      },
+      {
+        "community": "gitlab",
+        "community_url": "https://www.reddit.com/r/gitlab/comments/1q69s3p/why_some_of_the_company_choose_saas_than_self/",
+        "title": "Why some of the company choose saas than self hosted?",
+        "url": "https://www.reddit.com/r/gitlab/comments/1q69s3p/why_some_of_the_company_choose_saas_than_self/",
+        "thumbnail": null,
+        "num_upvotes": "9",
+        "num_comments": 22
+      },
+      {
+        "community": "showmeyoursaas",
+        "community_url": "https://www.reddit.com/r/ShowMeYourSaaS/comments/1q146af/show_me_your_saas_and_i_might_support_it/",
+        "title": "Show me your saas and i might support it financially!",
+        "url": "https://www.reddit.com/r/ShowMeYourSaaS/comments/1q146af/show_me_your_saas_and_i_might_support_it/",
+        "thumbnail": null,
+        "num_upvotes": "58",
+        "num_comments": 281
+      },
+      {
+        "community": "b2bsaas",
+        "community_url": "https://www.reddit.com/r/B2BSaaS/comments/1r3tmh6/i_will_find_customers_for_your_saas/",
+        "title": "I will find customers for your SaaS",
+        "url": "https://www.reddit.com/r/B2BSaaS/comments/1r3tmh6/i_will_find_customers_for_your_saas/",
+        "thumbnail": null,
+        "num_upvotes": "33",
+        "num_comments": 58
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1q4e3jz/why_am_i_building_a_saas/",
+        "title": "Why am I building a SAAS?",
+        "url": "https://www.reddit.com/r/SaaS/comments/1q4e3jz/why_am_i_building_a_saas/",
+        "thumbnail": null,
+        "num_upvotes": "28",
+        "num_comments": 23
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1qbacpe/what_we_did_to_make_38k_from_our_saas_in_the/",
+        "title": "What we did to make $38k from our saas in the first 30-days",
+        "url": "https://www.reddit.com/r/SaaS/comments/1qbacpe/what_we_did_to_make_38k_from_our_saas_in_the/",
+        "thumbnail": null,
+        "num_upvotes": "93",
+        "num_comments": 37
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1p0igcg/what_is_the_most_hardest_part_of_building_a_saas/",
+        "title": "What is the most hardest part of building a SaaS?",
+        "url": "https://www.reddit.com/r/SaaS/comments/1p0igcg/what_is_the_most_hardest_part_of_building_a_saas/",
+        "thumbnail": null,
+        "num_upvotes": "44",
+        "num_comments": 89
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1r692k3/built_my_saas_to_132k_arr_and_i_didnt_write_a/",
+        "title": "Built my SaaS to $132K ARR and I didn't write a single line of code",
+        "url": "https://www.reddit.com/r/SaaS/comments/1r692k3/built_my_saas_to_132k_arr_and_i_didnt_write_a/",
+        "thumbnail": null,
+        "num_upvotes": "41",
+        "num_comments": 41
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1qipb8b/what_are_you_building_in_saas_this_year/",
+        "title": "What are you building in SaaS this year?",
+        "url": "https://www.reddit.com/r/SaaS/comments/1qipb8b/what_are_you_building_in_saas_this_year/",
+        "thumbnail": null,
+        "num_upvotes": "77",
+        "num_comments": 177
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1okerxq/is_it_realistic_to_build_saas_products_with_ai/",
+        "title": "Is it realistic to build SaaS products with AI builders now?",
+        "url": "https://www.reddit.com/r/SaaS/comments/1okerxq/is_it_realistic_to_build_saas_products_with_ai/",
+        "thumbnail": null,
+        "num_upvotes": "7",
+        "num_comments": 34
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1r6vim0/how_did_you_get_your_first_50_users_for_your_saas/",
+        "title": "How did you get your first 50 users for your SaaS?",
+        "url": "https://www.reddit.com/r/SaaS/comments/1r6vim0/how_did_you_get_your_first_50_users_for_your_saas/",
+        "thumbnail": null,
+        "num_upvotes": "149",
+        "num_comments": 190
+      },
+      {
+        "community": "saasbuild",
+        "community_url": "https://www.reddit.com/r/saasbuild/comments/1qbmdah/tuesday_we_build_what_saas_are_you_building/",
+        "title": "Tuesday we build! What SaaS are you building? 🚀",
+        "url": "https://www.reddit.com/r/saasbuild/comments/1qbmdah/tuesday_we_build_what_saas_are_you_building/",
+        "thumbnail": null,
+        "num_upvotes": "12",
+        "num_comments": 67
+      },
+      {
+        "community": "vibecodingsaas",
+        "community_url": "https://www.reddit.com/r/VibeCodingSaaS/comments/1r1yg1d/shipped_8_saas_products_in_2_years_heres_my/",
+        "title": "Shipped 8 SaaS products in 2 years. Here's my complete 10-14 day build process, tech stack, and why speed matters more than perfection",
+        "url": "https://www.reddit.com/r/VibeCodingSaaS/comments/1r1yg1d/shipped_8_saas_products_in_2_years_heres_my/",
+        "thumbnail": null,
+        "num_upvotes": "43",
+        "num_comments": 17
+      },
+      {
+        "community": "nocodesaas",
+        "community_url": "https://www.reddit.com/r/NoCodeSaaS/comments/1p82jyz/is_there_anyone_who_built_saas_without_any/",
+        "title": "Is there anyone who built SaaS without any knowledge of coding and how ?",
+        "url": "https://www.reddit.com/r/NoCodeSaaS/comments/1p82jyz/is_there_anyone_who_built_saas_without_any/",
+        "thumbnail": null,
+        "num_upvotes": "26",
+        "num_comments": 48
+      },
+      {
+        "community": "sideproject",
+        "community_url": "https://www.reddit.com/r/SideProject/comments/1qktm37/i_built_3_saas_products_last_year_only_one_made/",
+        "title": "I built 3 SaaS products last year. Only one made money — here's what I learned",
+        "url": "https://www.reddit.com/r/SideProject/comments/1qktm37/i_built_3_saas_products_last_year_only_one_made/",
+        "thumbnail": null,
+        "num_upvotes": "21",
+        "num_comments": 15
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1r6vvej/stop_creating_more_saas/",
+        "title": "Stop Creating More SaaS.",
+        "url": "https://www.reddit.com/r/SaaS/comments/1r6vvej/stop_creating_more_saas/",
+        "thumbnail": null,
+        "num_upvotes": "72",
+        "num_comments": 67
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1r7wgh7/what_saas_are_you_building_right_now_and_how_are/",
+        "title": "What SaaS are you building right now and how are you getting your first users?",
+        "url": "https://www.reddit.com/r/SaaS/comments/1r7wgh7/what_saas_are_you_building_right_now_and_how_are/",
+        "thumbnail": null,
+        "num_upvotes": "32",
+        "num_comments": 113
+      },
+      {
+        "community": "aiforsmallbusiness",
+        "community_url": "https://www.reddit.com/r/AiForSmallBusiness/comments/1r650y5/i_built_3_saas_products_as_a_nontechnical_founder/",
+        "title": "I built 3 SaaS products as a non-technical founder. Hit $11k MRR in 6 months. Here's what actually worked",
+        "url": "https://www.reddit.com/r/AiForSmallBusiness/comments/1r650y5/i_built_3_saas_products_as_a_nontechnical_founder/",
+        "thumbnail": null,
+        "num_upvotes": "4",
+        "num_comments": 13
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1r068ks/i_wish_someone_would_have_told_me_this_before/",
+        "title": "i wish someone would have told me this before building my 1st SaaS",
+        "url": "https://www.reddit.com/r/SaaS/comments/1r068ks/i_wish_someone_would_have_told_me_this_before/",
+        "thumbnail": null,
+        "num_upvotes": "163",
+        "num_comments": 62
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1qsb2kq/how_do_i_validate_a_saas_idea_need_real_founder/",
+        "title": "How do I validate a SaaS idea? Need real founder advice before building!",
+        "url": "https://www.reddit.com/r/SaaS/comments/1qsb2kq/how_do_i_validate_a_saas_idea_need_real_founder/",
+        "thumbnail": null,
+        "num_upvotes": "28",
+        "num_comments": 30
+      },
+      {
+        "community": "saasmarketing",
+        "community_url": "https://www.reddit.com/r/SaaSMarketing/comments/1pvxzom/im_looking_for_some_honest_advice_from_people/",
+        "title": "I'm looking for some honest advice from people who've actually scaled SaaS.",
+        "url": "https://www.reddit.com/r/SaaSMarketing/comments/1pvxzom/im_looking_for_some_honest_advice_from_people/",
+        "thumbnail": null,
+        "num_upvotes": "6",
+        "num_comments": 20
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1p9z2yl/what_are_you_building_right_now_drop_your_saas/",
+        "title": "what are you building right now? drop your saas / project",
+        "url": "https://www.reddit.com/r/SaaS/comments/1p9z2yl/what_are_you_building_right_now_drop_your_saas/",
+        "thumbnail": null,
+        "num_upvotes": "48",
+        "num_comments": 307
+      },
+      {
+        "community": "saas",
+        "community_url": "https://www.reddit.com/r/SaaS/comments/1qapubd/founders_thread_show_off_your_saas_or_side_project/",
+        "title": "Founders Thread: Show Off Your SaaS or Side Project",
+        "url": "https://www.reddit.com/r/SaaS/comments/1qapubd/founders_thread_show_off_your_saas_or_side_project/",
+        "thumbnail": null,
+        "num_upvotes": "26",
+        "num_comments": 109
+      },
+      {
+        "community": "saassolopreneurs",
+        "community_url": "https://www.reddit.com/r/SaaSSolopreneurs/comments/1qwxcje/hey_builders_where_do_you_deploy_your_saas_how_is/",
+        "title": "Hey Builders! Where do you deploy your Saas? How is your CI/CD setup?",
+        "url": "https://www.reddit.com/r/SaaSSolopreneurs/comments/1qwxcje/hey_builders_where_do_you_deploy_your_saas_how_is/",
+        "thumbnail": null,
+        "num_upvotes": "7",
+        "num_comments": 26
+      },
+      {
+        "community": "saasdevelopers",
+        "community_url": "https://www.reddit.com/r/SaasDevelopers/comments/1r5xn5m/what_tech_stack_would_you_recommend_for_building/",
+        "title": "What tech stack would you recommend for building a first SaaS in 2026?",
+        "url": "https://www.reddit.com/r/SaasDevelopers/comments/1r5xn5m/what_tech_stack_would_you_recommend_for_building/",
+        "thumbnail": null,
+        "num_upvotes": "26",
+        "num_comments": 50
+      }
+    ],
+    "comments": null,
+    "community_url": "https://www.reddit.com/r/softwarearchitecture/",
+    "community_description": "Dive into discussions on designing, structuring, and optimizing software systems. Share insights on architectural patterns, best practices, and real-world experiences.",
+    "community_members_num": 95202,
+    "community_rank": {
+      "community_rank_type": null,
+      "community_rank_value": null
+    },
+    "post_karma": 0,
+    "bio_description": null,
+    "embedded_links": null,
+    "description_markdown": null,
+    "subreddit_icon_image": "https://styles.redditmedia.com/t5_2zim0/styles/communityIcon_67traefrn2mb1.jpg?width=96&height=96&frame=1&auto=webp&crop=96%3A96%2Csmart&s=fba0cf1448cbbb59aacd088442cce2b502b8fad6",
+    "author_icon": "https://preview.redd.it/snoovatar/avatars/9c48cc6b-7590-4053-b65b-0e9fe1f212b4-headshot.png?width=64&height=64&crop=smart&auto=webp&s=44a7e839b17b17e6a0d4a4c9da322d49c10a08e2",
+    "user_id": "t2_8iar3tp7",
+    "timestamp": "2026-02-21T10:17:24.632Z",
+    "input": {
+      "url": "https://www.reddit.com/r/softwarearchitecture/comments/1r8wn64/custom_build_vs_headless_opensource_erp_for_a_b2b/"
+    },
+    "discovery_input": {
+      "keyword": "saas pricing",
+      "date": "Past week",
+      "num_of_posts": 5,
+      "sort_by": "Hot"
+    }
+  }
+}

@@ -1,165 +1,302 @@
-{
-  "count": 16,
-  "results": [
-    {
-      "platform": "Hacker News",
-      "title": "This seems like a nice breakdown of some options:<",
-      "content": "This seems like a nice breakdown of some options:<p><a href=\"https:&#x2F;&#x2F;taggart-tech.com&#x2F;discord-alternatives&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;taggart-tech.com&#x2F;discord-alternatives&#x2F;</a><p>(Not affiliated)",
-      "source_url": "https://news.ycombinator.com/item?id=46949219",
-      "author_username": "ilikepi",
-      "created_at": "2026-02-09T18:50:37Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "<a href=\"https:&#x2F;&#x2F;radius.to&#x2F;\" rel=\"n",
-      "content": "<a href=\"https:&#x2F;&#x2F;radius.to&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;radius.to&#x2F;</a> - a Meetup.com alternative of sorts - with fairer organiser pricing for smaller groups.  I posted a Show HN [1] here a while back, got tons of great feedback, and have been slowly improving it since, with little marketing.  Planning a re-launch here soon.<p>[1] <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=40717398\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=40717398</a>",
-      "source_url": "https://news.ycombinator.com/item?id=46940698",
-      "author_username": "radius89",
-      "created_at": "2026-02-09T01:56:18Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "In contrast with Roomy, Discord does provide for n",
-      "content": "In contrast with Roomy, Discord does provide for non-public community spaces.<p><a href=\"https:&#x2F;&#x2F;itsfoss.com&#x2F;roomy-discord-alternative&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;itsfoss.com&#x2F;roomy-discord-alternative&#x2F;</a>",
-      "source_url": "https://news.ycombinator.com/item?id=46946653",
-      "author_username": "jonstaab",
-      "created_at": "2026-02-09T15:58:32Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "You&#x27;ve pretty much covered all the open sourc",
-      "content": "You&#x27;ve pretty much covered all the open source alternatives, other than rocket.chat which is more similar to slack. This has a good list - <a href=\"https:&#x2F;&#x2F;medium.com&#x2F;@jingjunm&#x2F;the-best-alternatives-to-discord-ranked-a9deedf723b8\" rel=\"nofollow\">https:&#x2F;&#x2F;medium.com&#x2F;@jingjunm&#x2F;the-best-alternatives-to-discor...</a><p>If you don&#x27;t NEED the open-source, pumble and steam group chats work great too",
-      "source_url": "https://news.ycombinator.com/item?id=46970640",
-      "author_username": "hydroflame7",
-      "created_at": "2026-02-11T03:58:52Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "<a href=\"https:&#x2F;&#x2F;github.com&#x2F;stackta",
-      "content": "<a href=\"https:&#x2F;&#x2F;github.com&#x2F;stacktape&#x2F;stacktape\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;stacktape&#x2F;stacktape</a><p>An alternative to tools lik sst.dev or serverless framework, or a PaaS services like Render.com or Flightcontrol.<p>Deploys to user&#x27;s own AWS. IaC-first. Has a PaaS-like console UI.<p>The best features: auto-generates IaC config by scanning your code. Has built-in EC2 runner which is 2-6x faster than AWS CodeBuild.<p>We&#x27;ve now also implemented dev mode, which is similar to SST. It deploys parts of the stacks that can&#x27;t be locally emulated (lambda functions, cognito, etc.) with fast re-deploy, and emulates everything else (containers, SQL databases, Redis, DynamoDb, etc.) locally. This means testing&#x2F;developing is pretty much free, and you have the fastest feedback loops possible.<p>Whole Stacktape, and dev mode in particular is also very optimized for coding agents with `--agent` flag.<p>To try it, run `npx stacktape init`<p>EDIT: Changed the link to github. Stacktape core is now open-source.",
-      "source_url": "https://news.ycombinator.com/item?id=46944167",
-      "author_username": "matus_congrady",
-      "created_at": "2026-02-09T11:39:17Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "Show HN: Molinar – Open-source alternative to ai.com (AGPL-3.0)",
-      "content": "Hey HN,<p>I built a managed platform for OpenClaw (the open-source AI agent framework) and shipped the whole thing in a day. Then I open-sourced the platform itself.<p>The problem: Running your own AI agent means a Mac Mini in your closet, praying your wifi holds, and becoming a part-time sysadmin. Most people give up before they start.<p>The solution: 3 steps, 5 minutes, done.<p>1. Sign up\n2. Paste your Anthropic API key + Telegram bot token\n3. Hit launch<p>You watch your agent boot in real-time. When it hits &quot;Ready,&quot; it&#x27;s live on Telegram - running 24&#x2F;7 without your laptop open.<p>What actually happens when you hit Launch:<p>- ECS Fargate spins up an isolated container (FARGATE_SPOT, 2 vCPU&#x2F;4 GB)\n- Your API keys are pulled from AWS SSM Parameter Store (SecureString), encrypted at rest and never stored in our database\n- Each container gets its own ENI with an egress-only security group - no inbound ports, the agent initiates all connections\n- A background process patches the OpenClaw config for Telegram DM access\n- CloudWatch logs stream back to the dashboard, parsed into setup phases: provisioning -&gt; configuring -&gt; health check -&gt; nginx -&gt; gateway ready\n- Supabase Realtime pushes updates to the browser in real-time (3s polling during setup)<p>Stack: Next.js, Stytch B2B auth, Supabase (Postgres + Realtime), AWS ECS Fargate, SSM Parameter Store, CloudWatch, Stripe.<p>Security model:\n- Full container isolation — every agent is its own Fargate task, no shared compute\n- BYOK — you bring your own Anthropic key, we never see your usage or bill\n- Zero inbound ports — egress-only security group\n- Secrets encrypted in SSM with per-org&#x2F;per-instance paths, never persisted to Supabase\n- You can inspect every line of code — the entire platform is AGPL-3.0<p>The agent itself can search the web, read&#x2F;write files, run shell commands, manage cron jobs, monitor services, send messages - it&#x27;s a full autonomous assistant. I run one myself that monitors my Sentry errors, checks my analytics, reads my Slack, and flags anything that needs attention. All through Telegram.<p>Pricing: $49&#x2F;mo (starter) &#x2F; $149&#x2F;mo (pro). Or self-host the whole thing for free - it&#x27;s all on GitHub.<p>I&#x27;m a solo developer. This is the entire platform, open source, built in a day on top of the existing OpenClaw OSS project.<p>Oh, and autoscale is on. ;)<p>business.molinar.ai\nGitHub: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Molinar-AI&#x2F;openclaw-business\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;Molinar-AI&#x2F;openclaw-business</a>",
-      "source_url": "https://news.ycombinator.com/item?id=46942551",
-      "author_username": "novelica",
-      "created_at": "2026-02-09T07:29:20Z",
-      "points": 3,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "They point to AIStor as alternative.<p>Other alter",
-      "content": "They point to AIStor as alternative.<p>Other alternatives:<p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;deuxfleurs-org&#x2F;garage\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;deuxfleurs-org&#x2F;garage</a><p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;rustfs&#x2F;rustfs\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;rustfs&#x2F;rustfs</a><p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;seaweedfs&#x2F;seaweedfs\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;seaweedfs&#x2F;seaweedfs</a><p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;supabase&#x2F;storage\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;supabase&#x2F;storage</a><p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;scality&#x2F;cloudserver\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;scality&#x2F;cloudserver</a><p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;ceph&#x2F;ceph\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;ceph&#x2F;ceph</a><p>Among others",
-      "source_url": "https://news.ycombinator.com/item?id=47000503",
-      "author_username": "PhilippGille",
-      "created_at": "2026-02-13T08:48:42Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "Open Source alternative: <a href=\"https:&#x2F;&#x2",
-      "content": "Open Source alternative: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;inercia&#x2F;mitto\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;inercia&#x2F;mitto</a>",
-      "source_url": "https://news.ycombinator.com/item?id=46992989",
-      "author_username": "inercia",
-      "created_at": "2026-02-12T18:33:50Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "As someone else mentioned, there’s some speculatio",
-      "content": "As someone else mentioned, there’s some speculation in aviation subreddits that the bounds of the altitude restriction map to the MANPAD capabilities that some cartels are purported to have.<p><a href=\"https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;aviation&#x2F;comments&#x2F;1r1s4zt&#x2F;comment&#x2F;o4s35zu&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;aviation&#x2F;comments&#x2F;1r1s4zt&#x2F;comment&#x2F;o...</a><p>My read is that the admin is planning forceful strikes on the cartels within Mexico and is worried about their ability to retaliate by taking down US aircraft across the border.<p>Edit: The closure has now been kiboshed. The wording seems a little “don’t panic-y” to me, but better that than the alternative!\n<a href=\"https:&#x2F;&#x2F;x.com&#x2F;FAANews&#x2F;status&#x2F;2021583720465969421\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;FAANews&#x2F;status&#x2F;2021583720465969421</a>",
-      "source_url": "https://news.ycombinator.com/item?id=46974234",
-      "author_username": "jmatthiass",
-      "created_at": "2026-02-11T12:42:12Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "A better alternative to Meetup.com",
-      "content": "A better alternative to Meetup.com",
-      "source_url": "https://news.ycombinator.com/item?id=46957488",
-      "author_username": "drekipus",
-      "created_at": "2026-02-10T09:55:24Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "A free DocuSign (e-sign) alternative <a href=\"http",
-      "content": "A free DocuSign (e-sign) alternative <a href=\"https:&#x2F;&#x2F;useinkless.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;useinkless.com&#x2F;</a>",
-      "source_url": "https://news.ycombinator.com/item?id=46941654",
-      "author_username": "azianmike",
-      "created_at": "2026-02-09T04:43:40Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "That&#x27;s a great list. I&#x27;ve just opened a ",
-      "content": "That&#x27;s a great list. I&#x27;ve just opened a pull request on the minio repository to add these to the list of alternatives.<p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;minio&#x2F;minio&#x2F;pull&#x2F;21746\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;minio&#x2F;minio&#x2F;pull&#x2F;21746</a>",
-      "source_url": "https://news.ycombinator.com/item?id=47000871",
-      "author_username": "GeertJohan",
-      "created_at": "2026-02-13T09:45:31Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "&gt; Doing inference with a Mac Mini to save money",
-      "content": "&gt; Doing inference with a Mac Mini to save money is more or less holding it wrong.<p>No one&#x27;s running these large models on a Mac Mini.<p>&gt; Of course if you buy some overpriced Apple hardware it’s going to take years to break even.<p>Great, where can I find cheaper hardware that can run GLM 5&#x27;s 745B or Kimi K2.5 1T models? Currently it requires 2x M3 Ultras  (1TB VRAM) to run Kimi K2.5 at 24 tok&#x2F;s [1] What are the better value alternatives?<p>[1] <a href=\"https:&#x2F;&#x2F;x.com&#x2F;alexocheema&#x2F;status&#x2F;2016404573917683754\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;alexocheema&#x2F;status&#x2F;2016404573917683754</a>",
-      "source_url": "https://news.ycombinator.com/item?id=46976606",
-      "author_username": "mythz",
-      "created_at": "2026-02-11T16:02:39Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "Thanks! And just so you know that I am not biased,",
-      "content": "Thanks! And just so you know that I am not biased, Bloomberry isnt the only alternative out there :) <a href=\"https:&#x2F;&#x2F;bloomberry.com&#x2F;blog&#x2F;i-tried-6-wappalyzer-alternatives-these-are-the-few-i-liked&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;bloomberry.com&#x2F;blog&#x2F;i-tried-6-wappalyzer-alternative...</a>",
-      "source_url": "https://news.ycombinator.com/item?id=46934002",
-      "author_username": "AznHisoka",
-      "created_at": "2026-02-08T13:26:36Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "Alternative: <a href=\"https:&#x2F;&#x2F;www.thetim",
-      "content": "Alternative: <a href=\"https:&#x2F;&#x2F;www.thetimes.com&#x2F;article&#x2F;77b00d3e-0746-4e03-bcdb-3bec258c643b?shareToken=783a7f1e2f5a65ed603b83179dcbb275\" rel=\"nofollow\">https:&#x2F;&#x2F;www.thetimes.com&#x2F;article&#x2F;77b00d3e-0746-4e03-bcdb-3be...</a> &#x2F; <a href=\"https:&#x2F;&#x2F;archive.md&#x2F;IwGUI\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.md&#x2F;IwGUI</a><p>The Tweet is mostly a copy of the Times article anyway.",
-      "source_url": "https://news.ycombinator.com/item?id=46959852",
-      "author_username": "Symbiote",
-      "created_at": "2026-02-10T14:03:38Z",
-      "points": 0,
-      "num_comments": 0
-    },
-    {
-      "platform": "Hacker News",
-      "title": "Show HN: Inamate – Open-source 2D animation tool (alternative to Adobe Animate)",
-      "content": "Adobe recently announced the end-of-life for Adobe Animate, then walked it back after community backlash.<p>Regardless of what Adobe decides next, the message was clear: animators who depend on proprietary tools are one corporate decision away from losing their workflow.<p>2D animation deserves an open-source option that isn&#x27;t a toy. We&#x27;ve been working with a professional animator to guide feature priorities and ensure we&#x27;re building something that actually fits real production workflows - not just a tech demo.<p>Github Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;17twenty&#x2F;inamate\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;17twenty&#x2F;inamate</a><p>We&#x27;re at the stage where community feedback shapes the direction. If you&#x27;re an animator, motion designer, or just someone who&#x27;s been frustrated by the state of 2D animation tools — we&#x27;d love to hear:<p>- What features would make you switch from your current tool?<p>- What&#x27;s the biggest pain point in your animation workflow?<p>- Is real-time collaboration actually useful for animation, or is it a gimmick?<p>Try it out, break it, and tell us what you think.<p>Built with Go, TS &amp; React, WebAssembly, PostgreSQL, WebSocket, ffmpeg (for video exports).",
-      "source_url": "https://news.ycombinator.com/item?id=46953567",
-      "author_username": "hactually",
-      "created_at": "2026-02-10T00:15:54Z",
-      "points": 15,
-      "num_comments": 13
-    }
-  ]
-}
+[
+  {
+    "id": "gd_l1vijqt9jfj7olije",
+    "name": "Crunchbase companies information",
+    "size": 2300000
+  },
+  {
+    "id": "gd_l1vikfch901nx3by4",
+    "name": "Instagram - Profiles",
+    "size": 620000000
+  },
+  {
+    "id": "gd_l1vil1d81g0u8763b2",
+    "name": "Manta businesses ",
+    "size": 5600000
+  },
+  {
+    "id": "gd_l1vil5n11okchcbvax",
+    "name": "US lawyers directory",
+    "size": 1429324
+  },
+  {
+    "id": "gd_l1vikfnt1wgvvqz95w",
+    "name": "LinkedIn company information",
+    "size": 55000000
+  },
+  {
+    "id": "gd_l1viktl72bvl7bjuj0",
+    "name": "LinkedIn people profiles",
+    "size": 115000000
+  },
+  {
+    "id": "gd_l1villgoiiidt09ci",
+    "name": "TikTok - Profiles",
+    "size": 152000000
+  },
+  {
+    "id": "gd_l1vilg5a1decoahvgq",
+    "name": "Slintel 6sense company information",
+    "size": 10880813
+  },
+  {
+    "id": "gd_l1vilaxi10wutoage7",
+    "name": "Owler companies information",
+    "size": 6130000
+  },
+  {
+    "id": "gd_l1vilsfd1xpsndbtpr",
+    "name": "VentureRadar company information",
+    "size": 324988
+  },
+  {
+    "name": "Australia real estate properties",
+    "size": 16000000,
+    "id": "gd_l3cvjh111l943r4awk"
+  },
+  {
+    "name": "Indeed job listings information",
+    "size": 7380000,
+    "id": "gd_l4dx9j9sscpvs7no2"
+  },
+  {
+    "name": "Glassdoor companies reviews",
+    "size": 2480000,
+    "id": "gd_l7j1po0921hbu0ri1z"
+  },
+  {
+    "name": "Xing social network",
+    "size": 8000000,
+    "id": "gd_l3lh4ev31oqrvvblv6"
+  },
+  { "name": "Indeed companies info", "id": "gd_l7qekxkv2i7ve6hx1s" },
+  {
+    "name": "Glassdoor companies overview information",
+    "size": 2480000,
+    "id": "gd_l7j0bx501ockwldaqf"
+  },
+  {
+    "name": "Amazon products",
+    "id": "gd_l7q7dkf244hwjntr0",
+    "size": 300000000
+  },
+  {
+    "name": "G2 software - product reviews",
+    "size": 132000,
+    "id": "gd_l88xvdka1uao86xvlb"
+  },
+  {
+    "name": "G2 software product overview",
+    "size": 132000,
+    "id": "gd_l88xp4k01qnhvyqlvw"
+  },
+  { "name": "Walmart - products ", "id": "gd_l95fol7l1ru6rlo116" },
+  { "name": "Mediamarkt.de products", "id": "gd_lbl2lo6y11m37z3gwq" },
+  { "name": "Fendi Products", "id": "gd_lbqsfpfk71ubir3pi" },
+  { "name": "Zalando products", "id": "gd_lbqj6l5s28ofha6mlk" },
+  { "name": "Sephora products", "id": "gd_lbz49igcthopwaygd" },
+  { "name": "Zara - Products ", "id": "gd_lct4vafw1tgx27d4o0" },
+  { "name": "Zara Home Products", "id": "gd_lcx5utgek9mxrsiie" },
+  { "name": "Mango Products", "id": "gd_lcyua5iy1go06own9d" },
+  { "name": "Massimo Dutti - Products ", "id": "gd_lcxf9r252p7e46ul5b" },
+  { "name": "Otodom Poland", "id": "gd_ld739mwou49s5y9ko" },
+  {
+    "name": "Webmotors Brasil - Cars Listings",
+    "size": 352000,
+    "id": "gd_ld73zt91j10sphddj"
+  },
+  { "name": "Airbnb Properties Information", "id": "gd_ld7ll037kqy322v05" },
+  { "name": "Asos - Products", "id": "gd_ldbg7we91cp53nr2z4" },
+  { "name": "Chanel Products", "id": "gd_ldwwuwqe1oh3zav3js" },
+  { "name": "Ashleyfurniture - Products", "id": "gd_le1ddqrs16uevi5vc4" },
+  { "name": "Fanatics.com - Products", "id": "gd_le124kuq1uoj7zj8hb" },
+  { "name": "Carters.com - Products", "id": "gd_le60f5v0dj17xgv6u" },
+  { "name": "AE.com - Complete Products", "id": "gd_le6plu065keypwyir" },
+  { "name": "Ikea - Products", "id": "gd_le2lfu10qrjmrqo60" },
+  { "name": "Amazon Reviews", "id": "gd_le8e811kzy4ggddlq" },
+  { "name": "H&M - Products", "id": "gd_lebec5ir293umvxh5g" },
+  { "name": "Lego - Products", "id": "gd_leenwt162rg85apy87" },
+  { "name": "Mattressfirm - Products", "id": "gd_legw5t6c2bvw9d7e4k" },
+  { "name": "Crateandbarrel - Products", "id": "gd_lemtcp2p2qdyd24vq5" },
+  { "name": "llbean.com - Products", "id": "gd_lemtwv4s1mglzlzh57" },
+  { "name": "Shein- Products", "id": "gd_lemu5ceq1jxjo7vzit" },
+  { "name": "Toysrus  - Products", "id": "gd_lemuapao1lkjggvn05" },
+  { "name": "Mybobs.com - Products ", "id": "gd_lf14k1zw1l3zcxs9m4" },
+  { "name": "Sleepnumber.com - Products", "id": "gd_lf8ctgxj1dpkzvl862" },
+  { "name": "Raymourflanigan.com - Products", "id": "gd_lf8cwb8wxoiqarizb" },
+  {
+    "name": "Inmuebles24 Mexico - Properties Listings",
+    "id": "gd_lfsa1vgv183347v45m"
+  },
+  { "name": "Mouser - Products ", "id": "gd_lfjty8942ogxzhmp8t" },
+  {
+    "name": "Zillow properties listing information",
+    "id": "gd_lfqkr8wm13ixtbd8f5"
+  },
+  {
+    "name": "Zonaprop Argentina - Properties Listing",
+    "id": "gd_lfsbhfgo2bglgrecm6"
+  },
+  {
+    "name": "Metrocuadrado - Properties Listings",
+    "id": "gd_lfsblgpf2oq16yrbny"
+  },
+  { "name": "Chileautos Chile - Cars Listings", "id": "gd_lfsbqgb01iiit5ppju" },
+  {
+    "name": "Infocasas Uruguay - Properties Listings",
+    "id": "gd_lftpmbga1jwon80ddh"
+  },
+  { "name": "La-z-boy.com - Products", "id": "gd_lg0nhuxkvxagfannn" },
+  {
+    "name": "Properati Argentina and Colombia - Properties Listings",
+    "id": "gd_lg3nvn6ibrhbotstw"
+  },
+  { "name": "Yapo Chile - marketplace ads", "id": "gd_lgfcz12mk6og7lvhs" },
+  { "name": "Toctoc - Properties Listings", "id": "gd_lgfdx3l01behlrboh7" },
+  { "name": "Yelp businesses overview", "id": "gd_lgugwl0519h1p14rwk" },
+  { "name": "Yelp businesses reviews", "id": "gd_lgzhlu9323u3k24jkv" },
+  { "name": "Dior - Products", "id": "gd_lh7o3kqu6wp7qmqkl" },
+  { "name": "Balenciaga.com - Products", "id": "gd_lh7oemkb2f9h596dfn" },
+  { "name": "Bottegaveneta.com - Products", "id": "gd_lh7os5q91y20h69xj" },
+  { "name": "OLX Brazil - marketplace ads", "id": "gd_lguvsr0wp4rx7fjfo" },
+  { "name": "Celine.com - Products", "id": "gd_lh7qnf8rwtn2c2uuc" },
+  { "name": "Loewe.com - Products", "id": "gd_lh7rkj4wwka9q19t" },
+  { "name": "Berluti.com - Products", "id": "gd_lh7sef5p16tcupyuy3" },
+  { "name": "Moynat.com - Products", "id": "gd_lh7rh0d12qkaid87e1" },
+  { "name": "Hermes- Products", "id": "gd_lh7sn8rz1g95zt4lwk" },
+  { "name": "Delvaux - Products", "id": "gd_lhahvbli142qv9r0v1" },
+  { "name": "Prada.com - Products", "id": "gd_lhahqiq52egng5v35i" },
+  { "name": "Montblanc - Products", "id": "gd_lhahz3n9dr6srx4cm" },
+  { "name": "Ysl.com - Products", "id": "gd_lhai2io04wilkad5z" },
+  { "name": "Amazon sellers info", "id": "gd_lhotzucw1etoe5iw1k" },
+  { "name": "World zipcodes ", "id": "gd_licvqc95ta2552qxu" },
+  { "id": "gd_lk0sjs4d21kdr7cnlv", "name": "Pinterest - Posts " },
+  { "id": "gd_lk0zv93c2m9qdph46z", "name": "Pinterest - Profiles" },
+  { "id": "gd_lk122xxgf86xf97py", "name": "Shopee - products" },
+  { "id": "gd_lk14r4zxuiw2uxpk6", "name": "Lazada - Products" },
+  { "id": "gd_lk5ns7kz21pck8jpis", "name": "Instagram - Posts" },
+  { "id": "gd_lk538t2k2p1k3oos71", "name": "YouTube - Profiles" },
+  { "id": "gd_lk56epmy2i5g7lzu0k", "name": "Youtube - Videos posts" },
+  { "id": "gd_lj74waf72416ro0k65", "name": "Digikey - Products" },
+  {
+    "id": "gd_lkaxegm826bjpoo9m5",
+    "name": "Facebook - Pages Posts by Profile URL"
+  },
+  { "id": "gd_lk9q0ew71spt1mxywf", "name": "Youtube - Comments" },
+  { "id": "gd_lkay758p1eanlolqw8", "name": "Facebook -  Comments" },
+  { "id": "gd_lkf2st302ap89utw5k", "name": "TikTok - Comments" },
+  {
+    "id": "gd_l1vijixj9g2vp7563",
+    "name": "Amazon best seller products",
+    "size": 1600000
+  },
+  { "id": "gd_l1vikf2h1a4t6x8qzu", "name": "IMDB media", "size": 680000 },
+  { "id": "gd_lm5zmhwd2sni130p", "name": "Trustpilot business reviews" },
+  {
+    "id": "gd_lmrpz3vxmz972ghd7",
+    "name": "Yahoo Finance business information"
+  },
+  { "id": "gd_lmusivh019i7g97q2n", "name": "Home Depot US " },
+  { "id": "gd_lmyvvktscoojdor83", "name": "Home Depot CA" },
+  {
+    "id": "gd_lnabksndfp1pegwzh",
+    "name": "Zoopla properties listing information"
+  },
+  { "id": "gd_lnsxoxzi1omrwnka5r", "name": "Google News" },
+  { "id": "gd_lnvl79pfftqh18u2o", "name": "Lowes.com" },
+  {
+    "id": "gd_lpfbbndm1xnopbrcr0",
+    "name": "Glassdoor job listings information"
+  },
+  { "id": "gd_lpfll7v5hcqtkxl6l", "name": "Linkedin job listings information" },
+  { "id": "gd_lptvxr8b1qx1d9thgp", "name": "Myntra products " },
+  { "id": "gd_lr9978962kkjr3nx49", "name": "Wikipedia articles" },
+  { "id": "gd_lreq6ho72fhvovjj7a", "name": "Goodreads books " },
+  { "id": "gd_lrqeq7u3bil0pmelk", "name": "World population" },
+  { "id": "gd_lrqirmftwxxatiorf", "name": "NBA players' stats" },
+  { "id": "gd_lsk382l8xei8vzm4u", "name": "Google Play Store" },
+  { "id": "gd_lsk9ki3u2iishmwrui", "name": "Apple App Store" },
+  { "id": "gd_ltppk0jdv1jqz25mz", "name": "Etsy" },
+  { "id": "gd_ltppk50q18kdw67omz", "name": "Google Shopping" },
+  { "id": "gd_ltppk5mx2lp0v1k0vo", "name": "Target" },
+  { "id": "gd_ltppn085pokosxh13", "name": "Instagram - Comments" },
+  { "id": "gd_ltr9mjt81n0zzdk1fb", "name": "eBay" },
+  { "id": "gd_ltr9ne3p24zrhrbu28", "name": "Wayfair products" },
+  { "id": "gd_ltre1jqe1jfr7cccf", "name": "Best Buy products" },
+  { "id": "gd_lu702nij2f790tmv9h", "name": "TikTok - Posts" },
+  { "id": "gd_lub6mys21lzcklkq1z", "name": "Lazada -  Reviews " },
+  { "id": "gd_lutq85sl13rlndbzai", "name": "Ozon.ru products" },
+  { "id": "gd_luz4fboh2dicd27hhm", "name": "Wildberries.ru products " },
+  { "id": "gd_luzfs1dn2oa0teb81", "name": "Google maps reviews" },
+  { "id": "gd_lvt9iwuh6fbcwmx1a", "name": "Facebook Marketplace" },
+  { "id": "gd_lvz1rbj81afv3m6n5y", "name": "Quora posts " },
+  { "id": "gd_lvz8ah06191smkebj4", "name": "Reddit- Posts" },
+  { "id": "gd_lvzdpsdlw09j6t702", "name": "Reddit - Comments" },
+  { "id": "gd_lwd9icor28eg4srnxi", "name": "Lazada products search (GMV)" },
+  { "id": "gd_lwdb4vjm1ehb499uxs", "name": "Amazon products search" },
+  { "id": "gd_lwhideng15g8jg63s7", "name": "Amazon products global dataset" },
+  { "id": "gd_lwxkxvnf1cynvib9co", "name": "X (formerly Twitter) - Posts" },
+  { "id": "gd_lwxmeb2u1cniijd7t4", "name": "X (formerly Twitter) - Profiles" },
+  { "id": "gd_lxk24yba297r8qd3tp", "name": "Tokopedia Products" },
+  { "id": "gd_lxk88z3v1ketji4pn", "name": "Vimeo - Videos posts" },
+  { "id": "gd_lxu1cz9r88uiqsosl", "name": "Zillow price history" },
+  { "id": "gd_ly5lkfzd1h8c85feyh", "name": "BBC news" },
+  { "id": "gd_lyclm1571iy3mv57zw", "name": "Facebook - Posts by post URL" },
+  { "id": "gd_lyclm20il4r5helnj", "name": "Instagram - Reels" },
+  { "id": "gd_lyclm3ey2q6rww027t", "name": "Facebook - Reels by profile URL" },
+  { "id": "gd_lycz8783197ch4wvwg", "name": "CNN news" },
+  { "id": "gd_lyrexgxc24b3d4imjt", "name": "Github repository" },
+  { "id": "gd_lyy3tktm25m4avu764", "name": "LinkedIn posts" },
+  { "id": "gd_lz11l67o2cb3r0lkj3", "name": "Facebook - Posts by group URL" },
+  { "id": "gd_lztojazw1389985ops", "name": "Trustradius product reviews" },
+  { "id": "gd_m0ci4a4ivx3j5l6nx", "name": "Zoominfo companies information" },
+  { "id": "gd_m0dtqpiu1mbcyc2g86", "name": "Facebook Company Reviews" },
+  { "id": "gd_m14sd0to1jz48ppm51", "name": "Facebook Events" },
+  {
+    "id": "gd_m18zt6ec11wfqohyrs",
+    "name": "Employees business enriched dataset"
+  },
+  { "id": "gd_m23cxdw82ct6k022y3", "name": "Creative Commons Images" },
+  {
+    "id": "gd_m31f2k0d2m1bah4f3b",
+    "name": "Google Shopping products search US"
+  },
+  {
+    "id": "gd_m3fl0mwzmfpfn4cw4",
+    "name": "Companies information enriched dataset"
+  },
+  { "id": "gd_m45m1u911dsa4274pi", "name": "TikTok Shop" },
+  { "id": "gd_m45p78dl1m017wi5lj", "name": "Top 500 Bluesky Profiles" },
+  { "id": "gd_m487ihp32jtc4ujg45", "name": "LinkedIn profiles Jobs Listings" },
+  { "id": "gd_m4bf7a917zfezv9d5", "name": " Booking Listings Search" },
+  { "id": "gd_m4ijiqfp2n9oe3oluj", "name": "pitchbook companies information" },
+  { "id": "gd_m4jr2hyr2kfhtvba6e", "name": "Creative Commons 3D Models" },
+  { "id": "gd_m4l6s4mn2g2rkx9lia", "name": "Amazon Walmart" },
+  {
+    "id": "gd_m517agnc1jppzwgtmw",
+    "name": "Realtor international properties listings"
+  },
+  { "id": "gd_m5mbdl081229ln6t4a", "name": "Booking Hotel Listings " },
+  { "id": "gd_m6hn4r5s27zfhc7w4", "name": "Bluesky - Posts" },
+  { "id": "gd_m6zagkt024uwvvwuyu", "name": "Google Play Store reviews" },
+  { "id": "gd_m734msue16e0adkbit", "name": "Apple App Store reviews " },
+  { "id": "gd_m7ke48w81ocyu4hhz0", "name": "Walmart sellers info" },
+  { "id": "gd_m7re62tb1w88ymy86r", "name": "mercadolivre.com.br products" },
+  { "id": "gd_m837ssst155rq3a1xo", "name": "Agoda Properties Listings" },
+  { "id": "gd_m8ebnr0q2qlklc02fz", "name": "Google Maps full information" },
+  {
+    "id": "gd_m8h7qkn317z9rvlngb",
+    "name": "Carsales Cars Listings search page information"
+  },
+  { "id": "gd_m9qqjxxr1hab7okefj", "name": "Naver products " },
+  { "id": "gd_ma0ydx431w6stl16ge", "name": "Snapchat posts" },
+  { "id": "gd_mf0urb782734ik94dz", "name": "Facebook - Profiles" },
+  { "id": "gd_mf124a0511bauquyow", "name": "Facebook - Pages and Profiles " },
+  { "id": "gd_mf53alwg1a35fv69pw", "name": "Rona.ca products" },
+  { "id": "gd_mhlod8vh2kwgoi9yw3", "name": "Kroger.com" },
+  { "id": "gd_miebqh4a18ivg65bpa", "name": "Macys.com" },
+  { "id": "gd_mkcbmac44j178pook", "name": "Costco products" },
+  { "id": "gd_mkce0sox1mchrlpp8g", "name": "B&H Products" },
+  { "id": "gd_mkckexq2uquhupguv", "name": "Micro Center Products" },
+  { "id": "gd_mkcnp8yy1kf8oxpvij", "name": "Autozone - products" }
+]

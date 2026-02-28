@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     open_ai_api_key: str
     bright_data_api_key: str
     x_api_key: str
+    apify_token: str
 
     class Config:
         env_file = ".env"

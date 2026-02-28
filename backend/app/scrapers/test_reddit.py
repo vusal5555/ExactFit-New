@@ -1,12 +1,5 @@
-import asyncio
-from app.scrapers.reddit_scraper import search_reddit
+from app.scrapers.linkedin_scraper import search_linkedin
 
-
-async def test():
-    posts = await search_reddit("saas pricing", max_results=5)
-    print(posts[0])
-    print("Got posts:", len(posts))
-    print("First post:", posts[0]["title"])
-
-
-asyncio.run(test())
+leads = search_linkedin("AI agent", max_results=10)
+for lead in leads:
+    print(lead["signal_type"], "|", lead["author"], "|", lead["title"])
