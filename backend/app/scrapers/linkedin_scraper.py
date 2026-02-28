@@ -1,10 +1,10 @@
-from apify_client import ApifyClient
+from apify_client import ApifyClient, ApifyClientAsync
 from app.config import settings
 
 ACTOR_ID = "buIWk2uOUzTmcLsuB"
 
 
-def _make_lead(post: dict, keyword: str, author: dict, signal_type: str) -> dict:
+def make_lead(post: dict, keyword: str, author: dict, signal_type: str) -> dict:
     text = post.get("content") or ""
     engagement = post.get("engagement") or {}
     return {
@@ -43,7 +43,7 @@ def normalize(items: list[dict], keyword: str) -> list[dict]:
 
     for post in posts_by_id.values():
         author = post.get("author") or {}
-        lead = _make_lead(post, keyword, author, "posted_about")
+        lead = make_lead(post, keyword, author, "posted_about")
         if lead["author"]:
             leads.append(lead)
 
@@ -52,7 +52,7 @@ def normalize(items: list[dict], keyword: str) -> list[dict]:
                 continue
             actor = r.get("actor") or {}
             if actor.get("name"):
-                leads.append(_make_lead(post, keyword, actor, "liked_post"))
+                leads.append(make_lead(post, keyword, actor, "liked_post"))
 
         for c in post.get("comments") or []:
             if not isinstance(c, dict):
@@ -61,7 +61,7 @@ def normalize(items: list[dict], keyword: str) -> list[dict]:
             if isinstance(commenter, str):
                 commenter = {"name": commenter}
             if commenter.get("name"):
-                leads.append(_make_lead(post, keyword, commenter, "commented_on_post"))
+                leads.append(make_lead(post, keyword, commenter, "commented_on_post"))
 
     for r in standalone_reactions:
         actor = r.get("actor") or {}
@@ -71,14 +71,14 @@ def normalize(items: list[dict], keyword: str) -> list[dict]:
         post = posts_by_id.get(
             post_id, {"linkedinUrl": (r.get("query") or {}).get("post", "")}
         )
-        leads.append(_make_lead(post, keyword, actor, "liked_post"))
+        leads.append(make_lead(post, keyword, actor, "liked_post"))
 
     return leads
 
 
-def search_linkedin(keyword: str, max_results: int = 20) -> list[dict]:
-    client = ApifyClient(settings.apify_token)
-    run = client.actor(ACTOR_ID).call(
+async def search_linkedin(keyword: str, max_results: int = 20) -> list[dict]:
+    client = ApifyClientAsync(settings.apify_token)
+    run = await client.actor(ACTOR_ID).call(
         run_input={
             "searchQueries": [keyword],
             "maxPosts": max_results,
