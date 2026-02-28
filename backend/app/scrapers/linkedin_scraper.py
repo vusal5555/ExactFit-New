@@ -94,5 +94,7 @@ async def search_linkedin(keyword: str, max_results: int = 20) -> list[dict]:
             "maxComments": 20,
         }
     )
-    items = list(client.dataset(run["defaultDatasetId"]).iterate_items())
+    items = []
+    async for item in client.dataset(run["defaultDatasetId"]).iterate_items():
+        items.append(item)
     return normalize(items, keyword)

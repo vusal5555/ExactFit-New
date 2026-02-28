@@ -41,40 +41,38 @@ async def get_existing_urls(monitor_id: str) -> set[str]:
 async def scan_monitor(monitor_id: str) -> dict[str, Any]:
     supabase = get_supabase_client()
 
-    monitor_res = (
+    response = (
         supabase.table("keyword_monitors")
         .select("*")
         .eq("id", monitor_id)
         .single()
         .execute()
     )
-    monitor = monitor_res.data
+
+    monitor = response.data
+
     if not monitor:
-        raise ValueError(f"Monitor {monitor_id} not found")
+        raise ValueError(f"Monitor not found: {monitor_id}")
 
-    keyword: str = monitor["keyword"]
-    platforms: list[str] = monitor["platforms"]
-    min_score: float = monitor.get("min_intent_score") or 7.0
-    user_id: str = monitor["user_id"]
+    keyword = monitor["keyword"]
+    platforms = monitor["platforms"]
+    min_intent_score = monitor["min_intent_score"]
+    user_id = monitor["user_id"]
 
-    scraper_tasks = [run_scraper(p, keyword) for p in platforms]
+    scraper_tasks = [run_scraper(platform, keyword) for platform in platforms]
     results = await asyncio.gather(*scraper_tasks)
 
-    all_posts: list[dict] = [
-        post for platform_posts in results for post in platform_posts
-    ]
-    existing_urls = await get_existing_urls(monitor_id)
+    all_posts = [post for platform_posts in results for post in platform_posts]
 
+    existing_urls = await get_existing_urls(monitor_id)
     new_posts = [p for p in all_posts if p.get("url") not in existing_urls]
 
-    qualified: list[dict] = []
+    qualified = []
     for post in new_posts:
         try:
-            analysis = await asyncio.to_thread(
-                intent_analyzer.analyze_intent, post, keyword
-            )
+            analysis = await intent_analyzer.analyze_intent(post, keyword)
             score = float(analysis.get("intent_score", 0))
-            if score >= min_score:
+            if score >= min_intent_score:
                 qualified.append(
                     {
                         "user_id": user_id,
@@ -99,7 +97,7 @@ async def scan_monitor(monitor_id: str) -> dict[str, Any]:
     if qualified:
         supabase.table("leads").insert(qualified).execute()
 
-    summary = {
+    return {
         "monitor_id": monitor_id,
         "keyword": keyword,
         "platforms": platforms,
@@ -107,8 +105,6 @@ async def scan_monitor(monitor_id: str) -> dict[str, Any]:
         "new_posts": len(new_posts),
         "qualified_leads": len(qualified),
     }
-    logger.info(f"Scan complete: {summary}")
-    return summary
 
 
 async def scan_all_monitors() -> list[dict[str, Any]]:

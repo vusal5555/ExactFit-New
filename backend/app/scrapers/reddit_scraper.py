@@ -71,5 +71,7 @@ async def search_reddit(keyword: str, max_results: int = 20) -> list[dict]:
             },
         }
     )
-    items = list(client.dataset(run["defaultDatasetId"]).iterate_items())
+    items = []
+    async for item in client.dataset(run["defaultDatasetId"]).iterate_items():
+        items.append(item)
     return normalize(items, keyword)
