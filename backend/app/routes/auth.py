@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 from app.database.db import supabase
 from pydantic import BaseModel
 
+
 router = APIRouter()
 
 
@@ -24,13 +25,18 @@ async def register(user: UserRegisterRequest):
         )
 
         if response.user:
-            supabase.table("users").insert(
-                {
-                    "id": str(response.user.id),
-                    "email": user.email,
-                    "full_name": user.full_name,
-                }
-            ).execute()
+            db_response = (
+                supabase.table("users")
+                .insert(
+                    {
+                        "id": str(response.user.id),
+                        "email": user.email,
+                        "full_name": user.full_name,
+                    }
+                )
+                .execute()
+            )
+
         return {"message": "User registered successfully", "user": response.user}
 
     except Exception as e:
