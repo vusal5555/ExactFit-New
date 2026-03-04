@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Header
 from app.database.db import supabase
 from pydantic import BaseModel
+import bcrypt
 
 
 router = APIRouter()
@@ -25,13 +26,16 @@ async def register(user: UserRegisterRequest):
         )
 
         if response.user:
-            db_response = (
+            (
                 supabase.table("users")
                 .insert(
                     {
                         "id": str(response.user.id),
                         "email": user.email,
                         "full_name": user.full_name,
+                        "password_hash": bcrypt.hashpw(
+                            user.password.encode("utf-8"), bcrypt.gensalt()
+                        ).decode("utf-8"),
                     }
                 )
                 .execute()

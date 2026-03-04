@@ -10,7 +10,8 @@ export async function proxy(request: NextRequest) {
 
   const isPublic = publicRoutes.some((route) => pathname.startsWith(route));
 
-  const user = token ? await getCurrentUser(token) : null;
+  // ...existing code...
+  const user = token ? await getCurrentUser(token).catch(() => null) : null;
 
   if (isPublic && user)
     return NextResponse.redirect(new URL("/dashboard", request.url));
