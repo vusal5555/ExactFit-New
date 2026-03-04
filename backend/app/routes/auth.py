@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Header
 from app.database.db import supabase
 from pydantic import BaseModel
 
@@ -60,3 +60,19 @@ async def login(user: LoginRequest):
         }
     except Exception as e:
         raise HTTPException(status_code=401, detail="Invalid email or password")
+
+
+@router.get("/me")
+async def get_current_user(authorization: str = Header(None)):
+    try:
+
+        if not authorization or not authorization.startswith("Bearer "):
+            raise HTTPException(status_code=401, detail="Invalid or missing token")
+
+        token = authorization.split(" ")[1]
+        response = supabase.auth.get_user(token)
+        if not response.user:
+            raise HTTPException(status_code=401, detail="Invalid or expired token")
+        return {"user": response.user}
+    except Exception as e:
+        raise HTTPException(status_code=401, detail="Invalid or expired token")

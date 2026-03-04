@@ -1,9 +1,10 @@
-import React from "react";
+"use client";
 
-type Props = {};
+import { useEffect, useState } from "react";
+import { getCurrentUser } from "@/lib/api";
 
-const DashboardPage = (props: Props) => {
-  return <div>DashboardPage</div>;
+const DashboardPage = () => {
+  return <div>Welcome</div>;
 };
 
 export default DashboardPage;

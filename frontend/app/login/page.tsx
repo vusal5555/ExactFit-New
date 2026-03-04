@@ -16,7 +16,6 @@ import { useRouter } from "next/navigation";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -26,7 +25,11 @@ const LoginPage = () => {
     setError("");
     setLoading(true);
     try {
-      await loginUser(email, password);
+      const data = await loginUser(email, password);
+
+      localStorage.setItem("access_token", data.access_token);
+      document.cookie = `access_token=${data.access_token}; path=/; max-age=${60 * 60 * 24 * 7}; SameSite=Lax`;
+
       router.push("/dashboard");
     } catch (err) {
       setError("Invalid email or password.");
