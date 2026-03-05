@@ -4,7 +4,6 @@ from app.utils.auth import get_current_user
 from typing import Optional
 from datetime import datetime, timezone, timedelta
 
-
 router = APIRouter()
 
 

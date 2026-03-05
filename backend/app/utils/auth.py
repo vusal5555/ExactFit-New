@@ -1,12 +1,15 @@
 from app.database.db import supabase
 from fastapi import Depends, HTTPException
-from fastapi.security import HTTPBearer
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 
-def get_current_user():
+security = HTTPBearer()
+
+
+def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
     try:
-
-        response = supabase.auth.get_user()
+        token = credentials.credentials
+        response = supabase.auth.get_user(token)
         if not response.user:
             raise HTTPException(status_code=401, detail="Invalid or expired token")
         return response.user

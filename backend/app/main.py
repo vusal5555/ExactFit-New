@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from app.database.db import supabase
-from app.routes import auth
 from app.scrapers.hn_scraper import search_hn
 from app.routes.analyze import router as analyze_router
 from app.routes.leads import router as leads_router
@@ -17,7 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(auth.router, prefix="/auth", tags=["auth"])
+
 app.include_router(analyze_router, prefix="/api/analyze", tags=["analyze"])
 app.include_router(leads_router, prefix="/api/leads", tags=["leads"])
 
