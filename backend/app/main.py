@@ -3,6 +3,7 @@ from app.database.db import supabase
 from app.scrapers.hn_scraper import search_hn
 from app.routes.analyze import router as analyze_router
 from app.routes.leads import router as leads_router
+from app.routes.monitors import router as monitors_router
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -19,6 +20,7 @@ app.add_middleware(
 
 app.include_router(analyze_router, prefix="/api/analyze", tags=["analyze"])
 app.include_router(leads_router, prefix="/api/leads", tags=["leads"])
+app.include_router(monitors_router, prefix="/api/monitors", tags=["monitors"])
 
 
 @app.get("/")
