@@ -3,6 +3,7 @@ from app.database.db import supabase
 from app.utils.auth import get_current_user
 from typing import Optional
 from datetime import datetime, timezone, timedelta
+from app.services.scanner import scan_monitor
 
 router = APIRouter()
 
@@ -121,3 +122,23 @@ async def dismiss_lead(lead_id: str, user=Depends(get_current_user)):
     if not response.data:
         raise HTTPException(status_code=404, detail="Lead not found")
     return {"lead": response.data[0]}
+
+
+@router.post("/scan/{monitor_id}")
+async def scan_monitor_now(monitor_id: str, user=Depends(get_current_user)):
+    monitor = (
+        supabase.table("keyword_monitors")
+        .select("id")
+        .eq("id", monitor_id)
+        .eq("user_id", str(user.id))
+        .single()
+        .execute()
+        .data
+    )
+    if not monitor:
+        raise HTTPException(status_code=404, detail="Monitor not found")
+    try:
+        result = await scan_monitor(monitor_id)
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

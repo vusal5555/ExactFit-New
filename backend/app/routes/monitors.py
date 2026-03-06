@@ -11,13 +11,15 @@ router = APIRouter()
 class MonitorCreateRequest(BaseModel):
     keyword: str
     platforms: list[str]
-    min_intent_score: Optional[float] = 7
+    min_intent_score: Optional[int] = 7
+    is_active: bool = True
 
 
 class MonitorUpdateRequest(BaseModel):
     keyword: Optional[str] = None
     platforms: Optional[list[str]] = None
-    min_intent_score: Optional[float] = None
+    min_intent_score: Optional[int] = None
+    is_active: Optional[bool] = None
 
 
 @router.post("/")
@@ -31,6 +33,7 @@ async def create_monitor(request: MonitorCreateRequest, user=Depends(get_current
                     "keyword": request.keyword,
                     "platforms": request.platforms,
                     "min_intent_score": request.min_intent_score,
+                    "is_active": request.is_active,
                 }
             )
             .execute()
@@ -39,6 +42,7 @@ async def create_monitor(request: MonitorCreateRequest, user=Depends(get_current
         return {"message": "Monitor created successfully", "monitor": response.data[0]}
 
     except Exception as e:
+        print("ERROR:", str(e))  # add this
         raise HTTPException(status_code=400, detail=str(e))
 
 
@@ -71,6 +75,8 @@ async def update_monitor(
             update_data["platforms"] = request.platforms
         if request.min_intent_score is not None:
             update_data["min_intent_score"] = request.min_intent_score
+        if request.is_active is not None:
+            update_data["is_active"] = request.is_active
 
         if not update_data:
             raise HTTPException(status_code=400, detail="No fields to update")

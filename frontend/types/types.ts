@@ -19,6 +19,7 @@ export interface MonitorRecord {
   keyword: string;
   platforms: string[];
   min_intent_score: number;
+  is_active: boolean;
   created_at: string;
   last_scanned_at?: string;
 }

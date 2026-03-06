@@ -15,6 +15,25 @@ export async function apiFetch<T>(path: string, token: string): Promise<T> {
   return res.json() as Promise<T>;
 }
 
+export async function apiMutate<T>(
+  path: string,
+  token: string,
+  method: "POST" | "PUT" | "DELETE",
+  body?: unknown,
+): Promise<T> {
+  const base = "http://localhost:8000";
+  const res = await fetch(`${base}${path}`, {
+    method,
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: body !== undefined ? JSON.stringify(body) : undefined,
+  });
+  if (!res.ok) throw new Error(`API error ${res.status}: ${path}`);
+  return res.json() as Promise<T>;
+}
+
 export function timeAgo(dateStr: string): string {
   const diff = Date.now() - new Date(dateStr).getTime();
   const mins = Math.floor(diff / 60000);
