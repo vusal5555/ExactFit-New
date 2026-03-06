@@ -1,4 +1,4 @@
-from apify_client import ApifyClient, ApifyClientAsync
+from apify_client import ApifyClientAsync
 from app.config import settings
 
 ACTOR_ID = "buIWk2uOUzTmcLsuB"

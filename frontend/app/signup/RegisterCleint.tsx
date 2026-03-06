@@ -44,7 +44,7 @@ const RegisterClient = () => {
       email,
       password,
       options: {
-        emailRedirectTo: `${window.location.origin}/dashboard`,
+        emailRedirectTo: `${window.location.origin}/auth/callback?next=/dashboard`,
       },
     });
 
@@ -53,7 +53,7 @@ const RegisterClient = () => {
       setSuccess(null);
     } else {
       setError(null);
-      setSuccess("Login successful!");
+      setSuccess("Check your email to confirm your account.");
     }
   }
 
@@ -61,7 +61,7 @@ const RegisterClient = () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/dashboard`,
+        redirectTo: `${window.location.origin}/auth/callback?next=/dashboard`,
       },
     });
     if (error) {
