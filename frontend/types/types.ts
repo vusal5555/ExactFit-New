@@ -12,6 +12,10 @@ export interface LeadRecord {
   is_dismissed: boolean;
   keyword?: string;
   monitor_id?: string;
+  content?: string;
+  pain_points?: string[];
+  recommended_action?: string;
+  reasoning?: string;
 }
 
 export interface MonitorRecord {

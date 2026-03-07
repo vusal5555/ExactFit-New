@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useMemo } from "react";
-import { LayoutDashboard, Radio, LogOut, Zap } from "lucide-react";
+import { LayoutDashboard, Radio, LogOut, Zap, Users } from "lucide-react";
 import { browserClient } from "@/lib/browser-client";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/monitors", label: "Monitors", icon: Radio },
+  { href: "/leads", label: "Leads", icon: Users },
 ];
 
 export default function Sidebar() {
