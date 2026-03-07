@@ -10,6 +10,8 @@ export async function apiFetch<T>(path: string, token: string): Promise<T> {
 
   const res = await fetch(`${base}${path}`, {
     headers: { Authorization: `Bearer ${token}` },
+    cache: "force-cache",
+    next: { revalidate: 3600 },
   });
   if (!res.ok) throw new Error(`API error ${res.status}: ${path}`);
   return res.json() as Promise<T>;
@@ -28,6 +30,7 @@ export async function apiMutate<T>(
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
+
     body: body !== undefined ? JSON.stringify(body) : undefined,
   });
   if (!res.ok) throw new Error(`API error ${res.status}: ${path}`);
