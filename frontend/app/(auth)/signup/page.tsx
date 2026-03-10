@@ -1,9 +1,6 @@
-import React from "react";
 import RegisterClient from "./RegisterCleint";
 
-type Props = {};
-
-const RegisterPage = (props: Props) => {
+const RegisterPage = () => {
   return <RegisterClient />;
 };
 

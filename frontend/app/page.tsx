@@ -10,8 +10,6 @@ import {
   ChevronRight,
   X,
   Check,
-  Clock,
-  Users,
   ExternalLink,
 } from "lucide-react";
 
